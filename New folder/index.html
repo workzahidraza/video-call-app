@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Calling App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <!-- Initial Screen -->
+      <div id="initialScreen" class="screen">
+        <div class="afterPlusBtn">
+          <div class="selectionToggle">
+            <div
+              class="joinMeet"
+              role="button"
+              tabindex="0"
+              aria-label="Join a meeting"
+            >
+              <h2>Join</h2>
+            </div>
+            <div
+              class="createMeet"
+              role="button"
+              tabindex="0"
+              aria-label="Create a meeting"
+            >
+              <h2>Create</h2>
+            </div>
+          </div>
+          <h2 id="formTitle">Join a Meeting</h2>
+          <form id="meetingForm">
+            <label for="roomId" style="display: none">Room ID</label>
+            <input
+              id="roomId"
+              class="textIn"
+              type="text"
+              name="roomId"
+              placeholder="Enter Room ID"
+              required
+            />
+            <label for="userName" style="display: none">Your Name</label>
+            <input
+              id="userName"
+              class="textIn"
+              type="text"
+              name="userName"
+              placeholder="Enter Your Name"
+              required
+            />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div class="btn">
+          <i
+            id="plusBtn"
+            class="ri-add-circle-fill"
+            aria-label="Open meeting options"
+          ></i>
+        </div>
+      </div>
+
+      <!-- Video Call Screen -->
+      <div id="videoScreen" class="screen" style="display: none">
+        <div class="videoContainer">
+          <video id="localVideo" autoplay muted></video>
+          <video id="remoteVideo" autoplay></video>
+        </div>
+        <div class="controls">
+          <button id="muteBtn" class="controlBtn">
+            <i class="ri-mic-fill"></i>
+          </button>
+          <button id="videoBtn" class="controlBtn">
+            <i class="ri-camera-fill"></i>
+          </button>
+          <button id="shareBtn" class="controlBtn">
+            <i class="ri-screen-share-fill"></i>
+          </button>
+          <button id="endBtn" class="controlBtn end">
+            <i class="ri-phone-fill"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

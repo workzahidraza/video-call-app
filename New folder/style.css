@@ -1,0 +1,263 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  font-family: Arial, sans-serif;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  color: azure;
+  position: relative;
+}
+
+.screen {
+  height: 100%;
+  width: 100%;
+}
+
+.btn {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: flex-start;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#plusBtn {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  margin-bottom: clamp(1rem, 5vh, 5%);
+  margin-left: clamp(1rem, 5vw, 5%);
+  background: linear-gradient(
+    90deg,
+    rgba(42, 123, 155, 1) 0%,
+    rgba(87, 199, 133, 1) 50%,
+    rgba(237, 221, 83, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  cursor: pointer;
+  transition: scale 0.1s ease;
+}
+
+#plusBtn:active {
+  scale: 0.97;
+}
+
+.afterPlusBtn {
+  height: clamp(200px, 20vh, 300px);
+  width: clamp(250px, 70vw, 500px);
+  max-width: 90vw;
+  max-height: 80vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(42, 123, 155, 1) 0%,
+    rgba(87, 199, 133, 1) 50%,
+    rgba(237, 221, 83, 1) 100%
+  );
+  display: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.selectionToggle {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  border-radius: 10px;
+  background-color: transparent;
+  backdrop-filter: blur(25px);
+  align-items: center;
+  gap: 10px;
+  justify-content: space-around;
+}
+
+.joinMeet,
+.createMeet {
+  flex: 1;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.joinMeet.active,
+.createMeet.active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.joinMeet h2,
+.createMeet h2 {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 10px;
+  color: black;
+  text-align: center;
+}
+
+#formTitle {
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: black;
+  margin-top: 10px;
+}
+
+#meetingForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px;
+}
+
+.textIn {
+  width: 100%;
+  height: clamp(40px, 10vh, 60px);
+  border-radius: 10px;
+  border: none;
+  padding: 10px 20px;
+  outline: none;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.textIn:hover,
+button:hover {
+  background-color: black;
+  color: burlywood;
+}
+
+button {
+  width: 80%;
+  height: clamp(40px, 10vh, 60px);
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* Video Screen */
+.videoContainer {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+video {
+  width: 45%;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid azure;
+}
+
+.controls {
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.controlBtn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.controlBtn:hover {
+  background-color: black;
+  color: burlywood;
+}
+
+.end {
+  background-color: red;
+  color: white;
+}
+
+.end:hover {
+  background-color: darkred;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  #plusBtn {
+    font-size: clamp(1.5rem, 8vw, 3rem);
+    margin-bottom: 2vh;
+    margin-left: 2vw;
+  }
+  .afterPlusBtn {
+    width: 90vw;
+    height: auto;
+    padding: 10px;
+  }
+  .selectionToggle {
+    height: 35px;
+  }
+  #formTitle {
+    font-size: 1.8rem;
+  }
+  #meetingForm {
+    gap: 8px;
+    padding: 10px;
+  }
+  .textIn,
+  button {
+    height: 45px;
+  }
+  video {
+    width: 90%;
+    margin: 10px;
+  }
+  .controls {
+    gap: 10px;
+  }
+  .controlBtn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #plusBtn {
+    font-size: 2rem;
+  }
+  #formTitle {
+    font-size: 1.5rem;
+  }
+  video {
+    width: 100%;
+  }
+}

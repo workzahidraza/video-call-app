@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Video Call App</title>
+  </head>
+
+  <body class="bg-gray-900 flex items-center justify-center h-screen">
+
+    <!-- Main Container -->
+    <div class="w-[90%] max-w-6xl bg-gray-800 rounded-2xl shadow-2xl p-6 relative">
+
+      <!-- Title -->
+      <h1 class="text-white text-2xl font-semibold mb-6 text-center">
+        🚀 Video Call Room
+      </h1>
+
+      <!-- Video Section -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Your Video -->
+        <div class="relative bg-black rounded-xl overflow-hidden shadow-lg">
+          <video name="user" autoplay class="user w-full h-[400px] object-cover"></video>
+          <span class="absolute bottom-2 left-2 bg-gray-700 text-white text-sm px-3 py-1 rounded-lg">
+            You
+          </span>
+        </div>
+
+        <!-- Client Video -->
+        <div class="relative bg-black rounded-xl overflow-hidden shadow-lg">
+          <video name="client" autoplay class="w-full h-[400px] object-cover"></video>
+          <span class="absolute bottom-2 left-2 bg-gray-700 text-white text-sm px-3 py-1 rounded-lg">
+            Client
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <div class="flex justify-center gap-6 mt-8">
+
+        <button class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-full transition">
+          🎤 Mute
+        </button>
+
+        <button class="Camera bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-full transition">
+          📷 Camera
+        </button>
+
+        <button class="endCall bg-red-600 hover:bg-red-500 text-white px-6 py-3 rounded-full transition">
+          ❌ End Call
+        </button>
+
+      </div>
+
+    </div>
+<script src="script.js"></script>
+  </body>
+</html>
